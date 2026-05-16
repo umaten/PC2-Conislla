@@ -1,0 +1,41 @@
+$tamaño-inicial: 13px; 
+$incremento-fuente: 5px;
+$incremento-sombra: 10px;
+$color-base: #f096e4;
+$sombra-ini: 10px;
+
+
+@function incrementar-tamaño($valor){
+    @return $tamaño-inicial + (($valor - 1) * $incremento-fuente) 
+}
+
+@function aumentar-sombra($valor){
+    @return (0px) ($sombra-ini + (($valor - 1) * $incremento-sombra)) ($sombra-ini + (($valor - 1) * $incremento-sombra))
+}
+@for  $i from 1 through 3 {
+    .card-#{$i}{
+        font-size: incrementar-tamaño($i);
+        border: 3px solid green;
+        flex: 1;
+        height: 100%;
+        box-shadow: aumentar-sombra($i) rgba($color: #000000, $alpha: 1.0);
+        // @if (brightness < 50%){
+        //     color: white;
+        // }
+        // color: #000000;
+        align-content: center;
+        text-align: center;
+    }
+}
+
+.container-card{
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    height: 200px;
+
+    button{
+        width: 70%;
+    }
+}
+
