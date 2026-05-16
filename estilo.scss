@@ -3,6 +3,7 @@ $incremento-fuente: 5px;
 $incremento-sombra: 10px;
 $color-base: #f096e4;
 $sombra-ini: 10px;
+$bg-color: white;
 
 
 @function incrementar-tamaño($valor){
@@ -23,11 +24,12 @@ $sombra-ini: 10px;
         text-align: center;
         background-color: #ffffff;
         
+        @if lightness($bg-color) < 50% {
+            color: #ffffff;
+        } @else {
+            color: #000000;
+        }
 
-    //     @if darkness < 50%{
-    //         color: white;
-    //     }
-    //     color: #000000;
     }
 }
 
