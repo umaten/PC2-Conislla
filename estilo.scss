@@ -19,12 +19,13 @@ $sombra-ini: 10px;
         flex: 1;
         height: 100%;
         box-shadow: aumentar-sombra($i) rgba($color: #000000, $alpha: 1.0);
-        // @if (brightness < 50%){
-        //     color: white;
-        // }
-        // color: #000000;
         align-content: center;
         text-align: center;
+
+        @if (brightness < 50%){
+            color: white;
+        }
+        color: #000000;
     }
 }
 
